@@ -27,16 +27,11 @@ const NavBar = () => {
           <Nav.Link as={Link} to="/deals" className="mx-auto">
             Deals
           </Nav.Link>
-
-          <Button
-            as={Link}
-            to="/login"
-            variant="contained"
-            color="secondary"
-            className="mx-auto"
-          >
-            {loggedInUser.displayName || "Login"}
-          </Button>
+          <Nav.Link as={Link} to="/login">
+            <Button variant="contained" color="secondary" className="mx-auto">
+              {loggedInUser.displayName || "Login"}
+            </Button>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
