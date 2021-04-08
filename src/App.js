@@ -20,9 +20,9 @@ function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <UserContext2.Provider value={[clickedProduct, setClickedProduct]}>
-        <NavBar></NavBar>
         {/* <h2>Current User: {loggedInUser.email}</h2> */}
         <Router>
+          <NavBar></NavBar>
           <Switch>
             <Route exact path="/">
               <Home></Home>

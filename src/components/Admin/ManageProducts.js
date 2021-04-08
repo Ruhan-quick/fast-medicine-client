@@ -9,6 +9,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { useHistory } from "react-router-dom";
 
 const ManageProducts = () => {
   const useStyles = makeStyles({
@@ -17,6 +18,8 @@ const ManageProducts = () => {
     },
   });
   const [medicines, setMedicines] = useState([]);
+
+  const history = useHistory();
 
   useEffect(() => {
     fetch("https://desolate-retreat-46685.herokuapp.com/showMedicines")
@@ -30,10 +33,15 @@ const ManageProducts = () => {
     fetch(`https://desolate-retreat-46685.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     })
-      .then((res) => res.json())
+      .then((res) => {
+        res.json();
+        alert("deleted successfully");
+      })
       .then((result) => {
         console.log("deleted successfully"); //working
         document.getElementById(`${id}`).innerHTML = ""; //not working
+        window.location.reload();
+        alert("deleted successfully");
       });
   };
 
