@@ -5,7 +5,10 @@ const Orders = () => {
   const [takenOrders, setTakenOrders] = useState([]);
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   useEffect(() => {
-    fetch("http://localhost:5000/showOrders?email=" + loggedInUser.email)
+    fetch(
+      "https://desolate-retreat-46685.herokuapp.com/showOrders?email=" +
+        loggedInUser.email
+    )
       .then((res) => res.json())
       .then((data) => setTakenOrders(data));
   }, []);

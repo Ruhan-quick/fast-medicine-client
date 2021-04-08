@@ -10,7 +10,7 @@ const Home = () => {
   const [medicines, setMedicines] = useState([]);
   const history = useHistory();
   useEffect(() => {
-    fetch("http://localhost:5000/showMedicines")
+    fetch("https://desolate-retreat-46685.herokuapp.com/showMedicines")
       .then((res) => res.json())
       .then((data) => setMedicines(data));
   }, []);

@@ -43,7 +43,7 @@ const AddProduct = () => {
   };
 
   const handleAddProduct = () => {
-    fetch("http://localhost:5000/addMedicine", {
+    fetch("https://desolate-retreat-46685.herokuapp.com/addMedicine", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(itData),

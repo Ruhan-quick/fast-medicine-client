@@ -38,7 +38,7 @@ const Checkout = () => {
   const handleOrder = () => {
     const email = loggedInUser.email;
     const newIt = { email, ...clickedProduct };
-    fetch("http://localhost:5000/addOrder", {
+    fetch("https://desolate-retreat-46685.herokuapp.com/addOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newIt),

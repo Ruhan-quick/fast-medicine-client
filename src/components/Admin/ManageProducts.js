@@ -19,7 +19,7 @@ const ManageProducts = () => {
   const [medicines, setMedicines] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/showMedicines")
+    fetch("https://desolate-retreat-46685.herokuapp.com/showMedicines")
       .then((res) => res.json())
       .then((data) => setMedicines(data));
   }, []);
@@ -27,7 +27,7 @@ const ManageProducts = () => {
 
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/delete/${id}`, {
+    fetch(`https://desolate-retreat-46685.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
