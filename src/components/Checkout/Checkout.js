@@ -37,7 +37,13 @@ const Checkout = () => {
 
   const handleOrder = () => {
     const email = loggedInUser.email;
-    const newIt = { email, ...clickedProduct };
+    const newIt = {
+      email,
+      productName: clickedProduct.productName,
+      productCategory: clickedProduct.productCategory,
+      productPrice: clickedProduct.productPrice,
+    };
+    console.log(newIt);
     fetch("https://desolate-retreat-46685.herokuapp.com/addOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
