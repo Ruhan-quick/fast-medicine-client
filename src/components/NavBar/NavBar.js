@@ -1,8 +1,11 @@
 import { Button } from "@material-ui/core";
-import React from "react";
+import React, { useContext } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { UserContext } from "../../App";
 
 const NavBar = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  console.log(loggedInUser);
   return (
     <Navbar expand="lg" className="container">
       <Navbar.Brand href="home">
@@ -31,7 +34,7 @@ const NavBar = () => {
             color="secondary"
             className="mx-auto"
           >
-            Login
+            {loggedInUser.displayName || "Login"}
           </Button>
         </Nav>
       </Navbar.Collapse>
