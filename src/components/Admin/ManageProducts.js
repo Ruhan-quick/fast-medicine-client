@@ -43,6 +43,8 @@ const ManageProducts = () => {
         window.location.reload();
         alert("deleted successfully");
       });
+    const delid = `${id}` + "del";
+    document.getElementById(delid).style.color = "red";
   };
 
   return (
@@ -71,7 +73,10 @@ const ManageProducts = () => {
                 <TableCell align="center">${row.productPrice}</TableCell>
                 <TableCell align="center">
                   <EditIcon />
-                  <DeleteIcon onClick={() => handleDelete(`${row._id}`)} />
+                  <DeleteIcon
+                    id={`${row._id}` + "del"}
+                    onClick={() => handleDelete(`${row._id}`)}
+                  />
                 </TableCell>
               </TableRow>
             ))}
