@@ -4,8 +4,13 @@ import "firebase/auth";
 import firebaseConfig from "../../firebase.config";
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app(); // if already initialized, use that one
+}
 
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -45,8 +50,12 @@ const Login = () => {
       });
   };
   return (
-    <div>
-      <button onClick={handleGoogleSignIn}>Sign in using google</button>
+    <div className="container">
+      <br />
+      <br />
+      <Button variant="success" block size="lg" onClick={handleGoogleSignIn}>
+        Sign in using google
+      </Button>
       <h3>Email: {user.email}</h3>
       <img src={user.photoURL} alt="" />
     </div>

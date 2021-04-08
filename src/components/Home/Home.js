@@ -33,14 +33,11 @@ const Home = () => {
           <Grid
             key={med._id}
             style={{
-              border: "1px solid red",
+              border: "0px solid red",
               margin: "40px",
-              // paddingLeft: "25px",
-              // paddingRight: "25px",
-              // paddingTop: "10px",
-              // paddingBottom: "10px",
               backgroundColor: "palegoldenrod",
               borderRadius: "10px",
+              boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
             }}
             align="center"
             item
